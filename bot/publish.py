@@ -62,6 +62,11 @@ def publish():
 
 
 def whoami():
+    user = os.environ.get("IG_USER_ID")
+    if user:
+        me = call("GET", user, fields="id,username,media_count")
+        print(f'IG_USER_ID OK: {me["id"]}  @{me.get("username")}  投稿数 {me.get("media_count")}')
+        return
     pages = call("GET", "me/accounts", fields="name,instagram_business_account{id,username}")
     for page in pages.get("data", []):
         ig = page.get("instagram_business_account")

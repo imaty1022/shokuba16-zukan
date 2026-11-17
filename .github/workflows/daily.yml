@@ -3,6 +3,12 @@ on:
   schedule:
     - cron: "31 11 * * *"   # 毎日 20:31 JST
   workflow_dispatch:
+    inputs:
+      mode:
+        description: "post=投稿する / check=生成・描画・鍵の確認だけ(投稿しない)"
+        type: choice
+        options: [check, post]
+        default: check
 
 permissions:
   contents: write
@@ -17,6 +23,7 @@ jobs:
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
       IMAGE_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}
+      CHECK_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.mode == 'check' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -24,13 +31,28 @@ jobs:
           python-version: "3.12"
       - run: sudo apt-get update && sudo apt-get install -y fonts-noto-cjk
       - run: pip install -r requirements.txt
+      - name: Instagram の鍵を確認
+        if: env.CHECK_ONLY == 'true'
+        run: python -m bot.publish --whoami
       - run: python -m bot.talk_generate
       - run: python -m bot.talk_render
+      - name: 画像を保存(確認用)
+        if: env.CHECK_ONLY == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview
+          path: |
+            posts
+            data/today.json
       - name: 画像を公開(InstagramがURLから取得するため)
+        if: env.CHECK_ONLY != 'true'
         run: |
           git config user.name "bot" && git config user.email "bot@users.noreply.github.com"
           git add posts data/today.json && git commit -m "post: $(date +%F)" && git push
           sleep 20
-      - run: python -m bot.publish
+      - if: env.CHECK_ONLY != 'true'
+        run: python -m bot.publish
       - name: 履歴を保存
-        run: git add data/history.json && git commit -m "history: $(date +%F)" && git push
+        if: env.CHECK_ONLY != 'true'
+        run: |
+          git add data/history.json && git commit -m "history: $(date +%F)" && git push
