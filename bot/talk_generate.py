@@ -157,7 +157,10 @@ def call_claude(prompt: str) -> dict:
         max_tokens=3000, system=SYSTEM,
         messages=[{"role": "user", "content": prompt}])
     text = "".join(b.text for b in msg.content if b.type == "text")
-    return json.loads(re.search(r"\{.*\}", text, re.S).group(0))
+    m = re.search(r"\{.*\}", text, re.S)
+    if not m:
+        raise ValueError("JSON が見つからない")
+    return json.loads(m.group(0))
 
 
 def finish(post: dict, topic: dict, nxt: dict, today: dt.date) -> dict:
@@ -181,8 +184,16 @@ def main():
                            **{k: topic[k] for k in ("type", "title", "scene")})
     feedback = ""
     for _ in range(5):
-        post = call_claude(prompt + feedback)
+        try:
+            post = call_claude(prompt + feedback)
+        except ValueError as e:  # JSONDecodeError も含む
+            errs = [f"JSON として読めない出力でした({e})。文字列の中では \" を使わず「」を使い、JSON だけを出力してください"]
+            print("NG:", errs)
+            feedback = "\n\n前回の出力は次の点で不合格でした。直して全体を出し直してください:\n- " + "\n- ".join(errs)
+            continue
         errs = validate(post, topic["type"])
+        if errs:
+            print("NG:", errs)
         if not errs:
             break
         feedback = "\n\n前回の出力は次の点で不合格でした。直して全体を出し直してください:\n- " + "\n- ".join(errs)
