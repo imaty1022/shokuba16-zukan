@@ -86,7 +86,7 @@ macOS などで動かすときは `FONT_DIR` を NotoSansCJK-*.ttc のある場�
 ## まだ確認できていないこと（最初にやること）
 
 1. Claude API: 2026-11-18 に Actions の確認モードで1回生成し、検査に通った（「飲み会を毎回断る人」）。品質の評価はまだ1本だけ。
-2. Instagram API: トークンと IG_USER_ID の読み取り（@shokuba16zukan）は確認済み。**実際の投稿はまだ一度も実行していない**。
+2. Instagram API: 2026-11-18 に初投稿成功（media 18111477143204053、「飲み会を5回断り続ける人」）。
    手動実行は既定で `mode=check`（生成・描画・鍵の確認だけ、画像は Actions の artifact に保存）。投稿は `mode=post` か毎日の定時実行。
 3. 描画は見本1本（定時退社）でしか確認していない。他のネタで文字があふれないか要確認。
 4. 最終形（ちび社員＋5枚構成）は評価エージェントの採点に回していない。
@@ -100,9 +100,9 @@ macOS などで動かすときは `FONT_DIR` を NotoSansCJK-*.ttc のある場�
       IG アカウントをビジネスポートフォリオの Instagram プロフィールに追加（フルアクセス）
 - [x] 同画面「2. アクセストークンを生成する」の「トークンを生成」→ Secrets へ。IG ユーザーID は画面の 1784… の数字
       （新しいアプリでは Instagram ログインの API 設定は選べない。権限は `instagram_basic`, `instagram_content_publish`。アプリレビュー要否は未確認）
-- [ ] リポジトリを**公開**にする（push 済みだが現在 private。private だと Instagram が画像を取得できない）（画像を raw.githubusercontent.com から配信するため公開必須）
+- [x] リポジトリを**公開**にする（画像を raw.githubusercontent.com から配信するため公開必須）
 - [x] Secrets 登録: `ANTHROPIC_API_KEY`, `IG_USER_ID`, `IG_ACCESS_TOKEN`
-- [ ] Actions から daily ワークフローを手動で1回実行
+- [x] Actions から daily ワークフローを手動で1回実行
 
 ## これまでの試行で分かったこと
 
