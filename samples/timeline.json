@@ -1,0 +1,15 @@
+{
+  "format": "timeline", "date": "sample-timeline", "type": "ISTJ", "setting": "日帰り出張の1日",
+  "title": "ISTJの日帰り出張",
+  "cover": {"text": "余り2個は予備", "emotion": "flat"},
+  "question": "ISTJの人、どこまで合ってる？",
+  "next": "上司から「ちょっと話せる？」とだけチャットが来た時",
+  "items": [
+    {"time": "06:50", "place": "東京駅", "action": "発車40分前に着き乗り場を下見する", "voice": "遅延に備えて2本前", "emotion": "flat"},
+    {"time": "09:10", "place": "新幹線", "action": "印刷した行程表に到着時刻を書き込む", "voice": "1分早い。気持ちいい", "emotion": "sparkle"},
+    {"time": "13:00", "place": "取引先", "action": "名刺を受け取った順に机へ並べる", "voice": "雑談は台本にない", "emotion": "sweat"},
+    {"time": "17:30", "place": "駅の売店", "action": "部署の人数を数えて18個入りを買う", "voice": "余り2個は予備", "emotion": "flat"},
+    {"time": "20:45", "place": "帰りの車内", "action": "領収書を日付順にクリップで留める", "voice": "1枚足りない。眠れない", "emotion": "cry"}
+  ],
+  "caption": "サンプル"
+}

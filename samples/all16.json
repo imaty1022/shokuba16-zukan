@@ -1,0 +1,213 @@
+{
+ "format": "all16",
+ "date": "sample",
+ "category": "会議",
+ "moment": "会議で「他に意見ある人？」のあと10秒沈黙が続いた時",
+ "title": "会議で10秒の沈黙が流れた時",
+ "cover": {
+  "type": "ESTJ",
+  "headline": "会議で10秒、誰も喋らない。"
+ },
+ "question": {
+  "text": "「沈黙は同意」の上司は？",
+  "a": "アリ",
+  "b": "ナシ",
+  "cat_a": "ESTJ",
+  "cat_b": "ENTP"
+ },
+ "next": "17時55分に「今日中でお願い」と依頼が来た時",
+ "items": [
+  {
+   "type": "INTJ",
+   "action": "「特にありません」と即答する",
+   "voice": "これ、メールで済んだ",
+   "emotion": "flat",
+   "hot": false,
+   "role": "即答で終わらせる人"
+  },
+  {
+   "type": "INTP",
+   "action": "議題の前提が気になり天井を仰ぐ",
+   "voice": "何の会議だっけ、これ",
+   "emotion": "sleepy",
+   "hot": true,
+   "role": "前提が気になる人",
+   "prop": "none"
+  },
+  {
+   "type": "ENTJ",
+   "action": "腕時計を見て優しくうなずく",
+   "voice": "この10秒、時給いくら",
+   "emotion": "angry",
+   "hot": false,
+   "role": "待てない人"
+  },
+  {
+   "type": "ENTP",
+   "action": "あえて真逆の案を出して反応を待つ",
+   "voice": "反対意見はない。暇なだけ",
+   "emotion": "smug",
+   "hot": false,
+   "role": "逆張りする人"
+  },
+  {
+   "type": "INFJ",
+   "action": "全員の顔色を順に確認して微笑む",
+   "voice": "部長の機嫌、いま62点",
+   "emotion": "flat",
+   "hot": false,
+   "role": "空気を読みすぎる人"
+  },
+  {
+   "type": "INFP",
+   "action": "口を開きかけて、お茶を飲む",
+   "voice": "脳内では熱弁をふるった",
+   "emotion": "dead",
+   "hot": false,
+   "role": "言えずに飲み込む人"
+  },
+  {
+   "type": "ENFJ",
+   "action": "「田中さんはどう？」と笑顔で振る",
+   "voice": "頼む、誰か喋って",
+   "emotion": "sweat",
+   "hot": true,
+   "role": "人に振る人",
+   "prop": "none"
+  },
+  {
+   "type": "ENFP",
+   "action": "目を輝かせて手を挙げる",
+   "voice": "着地点は考えてない",
+   "emotion": "sparkle",
+   "hot": false,
+   "role": "手だけ挙げる人"
+  },
+  {
+   "type": "ISTJ",
+   "action": "穏やかにアジェンダをめくる",
+   "voice": "先週も同じ結論でした",
+   "emotion": "angry",
+   "hot": false,
+   "role": "議題に戻したい人"
+  },
+  {
+   "type": "ISFJ",
+   "action": "誰も頼んでないのに議事録を取る",
+   "voice": "発言しない分の免罪符です",
+   "emotion": "sweat",
+   "hot": true,
+   "role": "議事録に逃げる人",
+   "prop": "none"
+  },
+  {
+   "type": "ESTJ",
+   "action": "「意見が出そろいましたね」と締める",
+   "voice": "沈黙は同意とみなす",
+   "emotion": "flat",
+   "hot": false,
+   "role": "締めたがる人",
+   "prop": "none"
+  },
+  {
+   "type": "ESFJ",
+   "action": "「お菓子ありますよ」と席を回る",
+   "voice": "配ってる間は当てられない",
+   "emotion": "normal",
+   "hot": false,
+   "role": "お菓子を配る人"
+  },
+  {
+   "type": "ISTP",
+   "action": "真剣な顔でキーボードを打つ",
+   "voice": "先に日報が書けた",
+   "emotion": "flat",
+   "hot": false,
+   "role": "内職してる人"
+  },
+  {
+   "type": "ISFP",
+   "action": "相づちを打ちつつ窓の外を眺める",
+   "voice": "うなずきは自動再生",
+   "emotion": "normal",
+   "hot": false,
+   "role": "窓の外を見てる人"
+  },
+  {
+   "type": "ESTP",
+   "action": "「一回やってみません？」と立つ",
+   "voice": "資料は読んでない",
+   "emotion": "sweat",
+   "hot": true,
+   "role": "とりあえず立つ人",
+   "prop": "none"
+  },
+  {
+   "type": "ESFP",
+   "action": "わざとらしい咳で場をつなぐ",
+   "voice": "今のは咳じゃなく悲鳴",
+   "emotion": "cry",
+   "hot": false,
+   "role": "咳でごまかす人"
+  }
+ ],
+ "caption": "サンプル",
+ "replies": [
+  {
+   "to": "ESTJ",
+   "from": "ENTP",
+   "text": "まだ誰も同意してないよ"
+  },
+  {
+   "to": "INTP",
+   "from": "ENTJ",
+   "text": "あなたが招集したんだよ"
+  },
+  {
+   "to": "ENFJ",
+   "from": "INFP",
+   "text": "田中は私です。無理です"
+  },
+  {
+   "to": "ISFJ",
+   "from": "ESTJ",
+   "text": "議事録、誰も読んでないよ"
+  },
+  {
+   "to": "ESTP",
+   "from": "ISTJ",
+   "text": "先週、送りましたよね"
+  }
+ ],
+ "events": [
+  "部長 が入室しました",
+  "部長 が入力中…",
+  "部長 が入力をやめました",
+  "既読 16（部長を含む）",
+  "部長 がスクショを撮りました",
+  "部長 が画面共有を開始しました"
+ ],
+ "boss_last": "",
+ "boss_line": "私も何の会議か分かってません。",
+ "cheat": {
+  "title": "沈黙した時、この人に振るならこの一言",
+  "items": {
+   "INTJ": "結論だけ聞かせて",
+   "INTP": "前提から疑ってみて",
+   "ENTJ": "決めてもらっていい？",
+   "ENTP": "あえて反対してみて",
+   "INFJ": "気になってること、ある？",
+   "INFP": "あとでチャットでもいいよ",
+   "ENFJ": "みんなの意見まとめて",
+   "ENFP": "思いつきで大丈夫",
+   "ISTJ": "手順の抜け、見てほしい",
+   "ISFJ": "議事録の補足、お願い",
+   "ESTJ": "期限を決めてくれる？",
+   "ESFJ": "場の空気、どう見える？",
+   "ISTP": "一言だけちょうだい",
+   "ISFP": "直感でどっちが好き？",
+   "ESTP": "まず試すなら何から？",
+   "ESFP": "率直な第一印象は？"
+  }
+ }
+}

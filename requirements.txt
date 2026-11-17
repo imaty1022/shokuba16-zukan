@@ -1,0 +1,6 @@
+anthropic
+fonttools
+numpy
+pillow
+pyyaml
+requests

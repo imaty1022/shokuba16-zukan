@@ -1,0 +1,7 @@
+# 鍵は絶対にコミットしない(このリポジトリは公開)
+.env
+.env.*
+*.key
+__pycache__/
+*.pyc
+.DS_Store
