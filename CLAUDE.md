@@ -85,9 +85,9 @@ macOS などで動かすときは `FONT_DIR` を NotoSansCJK-*.ttc のある場�
 
 ## まだ確認できていないこと（最初にやること）
 
-1. **Claude API の呼び出しは一度も実行していない**。モデル名は `CLAUDE_MODEL`（既定 `claude-sonnet-5-5`）。
-   見本の文章は人が書いたもの。API が同じ水準で書けるか、検査に通るかは初回実行で確認する。
-2. **Instagram API の呼び出しも一度も実行していない**（`graph.facebook.com`、既定 v26.0、統合ログインのシステムユーザートークン）。
+1. Claude API: 2026-11-18 に Actions の確認モードで1回生成し、検査に通った（「飲み会を毎回断る人」）。品質の評価はまだ1本だけ。
+2. Instagram API: トークンと IG_USER_ID の読み取り（@shokuba16zukan）は確認済み。**実際の投稿はまだ一度も実行していない**。
+   手動実行は既定で `mode=check`（生成・描画・鍵の確認だけ、画像は Actions の artifact に保存）。投稿は `mode=post` か毎日の定時実行。
 3. 描画は見本1本（定時退社）でしか確認していない。他のネタで文字があふれないか要確認。
 4. 最終形（ちび社員＋5枚構成）は評価エージェントの採点に回していない。
 5. `README.md` 前半の旧形式の説明を整理する。
@@ -98,10 +98,10 @@ macOS などで動かすときは `FONT_DIR` を NotoSansCJK-*.ttc のある場�
 - [x] Meta アプリ作成（`shokuba16-zukan`）、ビジネスポートフォリオ「職場の16タイプ図鑑」に接続、Instagram ユースケース追加
 - [x] 「API setup with Unified login」で設定「shokuba16 投稿用」を作成（無期限、権限2つ）、Instagram テスター承認、
       IG アカウントをビジネスポートフォリオの Instagram プロフィールに追加（フルアクセス）
-- [ ] 同画面「2. アクセストークンを生成する」の「トークンを生成」→ Secrets へ。IG ユーザーID は画面の 1784… の数字
+- [x] 同画面「2. アクセストークンを生成する」の「トークンを生成」→ Secrets へ。IG ユーザーID は画面の 1784… の数字
       （新しいアプリでは Instagram ログインの API 設定は選べない。権限は `instagram_basic`, `instagram_content_publish`。アプリレビュー要否は未確認）
-- [ ] **公開** GitHub リポジトリを作って push（画像を raw.githubusercontent.com から配信するため公開必須）
-- [ ] Secrets 登録: `ANTHROPIC_API_KEY`, `IG_USER_ID`, `IG_ACCESS_TOKEN`
+- [ ] リポジトリを**公開**にする（push 済みだが現在 private。private だと Instagram が画像を取得できない）（画像を raw.githubusercontent.com から配信するため公開必須）
+- [x] Secrets 登録: `ANTHROPIC_API_KEY`, `IG_USER_ID`, `IG_ACCESS_TOKEN`
 - [ ] Actions から daily ワークフローを手動で1回実行
 
 ## これまでの試行で分かったこと
